@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../js2"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Nouveau dossier"
+	}
+}

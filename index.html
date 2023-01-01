@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" 
+    crossorigin="anonymous">
+    <style>
+        
+     
+        input {
+            border-radius: 10%;
+        }
+        body{
+            background-image:url('javahome.png');
+            background-image:100% 100%;
+            background-repeat:no-repeat;
+            background-position: right;
+            background-size:50% 90%;
+        }
+        #button{
+            background-color:green;
+            color:white;
+           float: left;
+        }
+        div p{
+
+         text-align: right;
+
+        }
+
+    </style>
+
+
+
+   
+</head>
+<body>
+    <center>
+        <div class="signup" style="height: 500px; width: 700px; border: solid 1px; opacity: 0.7;">
+            <fieldset style="height: 700px; width: 700px;" >
+                <legend>SIGN UP</legend>
+        <div style="width:400px; height: 450px; opacity: 0.9;">
+           
+                <br>
+            
+            <label  class="form-label" for="uname">Username:</label>
+            <br>
+            <input type="text" class="form-control"  name="uname" id="uname" placeholder="choose a username" required>
+            <br>
+            <label  class="form-label" for="uemail">Email:</label>
+            <br>
+            <input type="uemail" class="form-control" name="uemail" id="uemail" placeholder="monemail@gmail.com" required>
+            <br>
+            <label  class="form-label" for="upin">Password:</label>
+            <br>
+            <input type="password" class="form-control" name="upin" id="upin" placeholder="8carac,1uppercase, 1 number and special character" required>
+            <br>
+            <label  class="form-label" for="ucpin">Confirm Password:</label>
+            <br>
+            <input type="password" class="form-control" name="ucpin" id="ucpin"
+             placeholder="Reenter your password" required>
+             <div  id="d1"style="background-color: red; visibility: hidden;"> password dont match! </div>
+           
+             <span id="message"></span>
+           
+                <button type="submit" onclick="matchPassword();CheckPassword()" class="form-control" id="button" > Sign up </button>
+            <br>
+        
+        
+        </div>
+        </fieldset>
+        </div>
+    </center>
+</body>
+<script>
+  var password=document.getElementById("upin");
+   
+
+        function matchPassword() {  
+  var pw1 = document.getElementById("upin");  
+  var pw2 = document.getElementById("ucpin");  
+  if(pw1.value != pw2.value)  
+  {   
+  document.getElementById('d1').style.visibility='visible';
+
+    alert("Passwords did not match");  
+    return false;
+	
+  }  else
+  {
+    document.getElementById('d1').style.visibility='hidden';
+    return true;
+  }
+
+
+}
+
+function CheckPassword() 
+{ 
+var paswd=  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
+if(password.value.match(paswd) && matchPassword()==true) 
+{ 
+document.getElementById('message').innerHTML="strong password u can proceed"
+window.location.replace('accueil.html');
+
+}
+else
+{ 
+  document.getElementById('message').innerHTML="weak password try another...!"
+
+}
+}  
+   
+    </script>
+</html>
